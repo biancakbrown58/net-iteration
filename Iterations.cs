@@ -32,7 +32,9 @@ namespace DotnetIteration
         //
         public static IEnumerable<string> Yelling(List<string> words)
         {
-            throw new System.NotImplementedException();
+            // throw new System.NotImplementedException();
+            var isYelling = words.Select(word => word.ToUpper());
+            return isYelling;
         }
 
 
@@ -43,7 +45,9 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> Double(List<int> numbers)
         {
-            throw new System.NotImplementedException();
+            // throw new System.NotImplementedException();
+            var multiplyBy2 = numbers.Select(number => (number * 2));
+            return multiplyBy2;
         }
 
 
@@ -55,7 +59,9 @@ namespace DotnetIteration
         // 
         public static IEnumerable<string> StringyIndexes(List<string> words)
         {
-            throw new System.NotImplementedException();
+            // throw new System.NotImplementedException();
+            var stringIndex = words.Select((words, index) => $"{words} is at index {index}");
+            return stringIndex;
         }
 
 
@@ -65,7 +71,10 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> OnlyTheEvenSurvive(List<int> numbers)
         {
-            throw new System.NotImplementedException();
+            // throw new System.NotImplementedException();
+
+            var evenNumbers = numbers.Where(number => number % 2 == 0);
+            return evenNumbers;
         }
 
 
@@ -76,7 +85,9 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> OnlyTheEvenIndexedSurvive(List<int> numbers)
         {
-            throw new System.NotImplementedException();
+            // throw new System.NotImplementedException();
+            var evenIndex = numbers.Where((numbers, index) => index % 2 == 0);
+            return evenIndex;
         }
 
 
@@ -95,7 +106,10 @@ namespace DotnetIteration
         // 
         public static IEnumerable<string> BestMovieOfTheYear(List<Movie> movies, int yearToMatch)
         {
-            throw new System.NotImplementedException();
+            // throw new System.NotImplementedException();
+            return movies.Where(movie => movie.Score >= 90 && movie.Year == yearToMatch).Select(movie => movie.Name);
+
+            // return movieScore;
         }
 
 
@@ -105,7 +119,9 @@ namespace DotnetIteration
         // 
         public static bool EveryoneIsOdd(List<int> numbers)
         {
-            throw new System.NotImplementedException();
+            // throw new System.NotImplementedException();
+            var oddNumbers = numbers.All(number => number % 2 != 0);
+            return oddNumbers;
         }
 
 
@@ -116,7 +132,11 @@ namespace DotnetIteration
         // 
         public static string FindTheNeedle(List<string> sentences)
         {
-            throw new System.NotImplementedException();
+            // throw new System.NotImplementedException();
+
+
+            var needleString = sentences.FirstOrDefault(sentence => sentence.Contains("needle"));
+            return needleString;
         }
 
 
@@ -127,7 +147,15 @@ namespace DotnetIteration
         // 
         public static int FindTheNeedleIndex(List<string> sentences)
         {
-            throw new System.NotImplementedException();
+            // throw new System.NotImplementedException();
+
+            // var needle = sentences.Select(sentence => sentence.Contains("needle")).Select(index => $"{index}");
+            // return needle;
+
+            var needleIndex = sentences.FindIndex((sentence) => sentence.Contains("needle"));
+
+            // var indexOfNeedle = sentences.Select(sentence => sentence.FindIndex(sentence));
+            return needleIndex;
         }
 
 
@@ -138,7 +166,9 @@ namespace DotnetIteration
         // 
         public static bool SomeoneToLove(List<string> words)
         {
-            throw new System.NotImplementedException();
+            // throw new System.NotImplementedException();
+            var whatString = words.Any(word => word.Length == 4);
+            return whatString;
         }
     }
 }
